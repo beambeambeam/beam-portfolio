@@ -1,0 +1,7 @@
+#!/bin/sh
+# Exit on any error
+set -e
+
+# Validate commit message using Commitlint
+# Use Bun to invoke the locally installed Commitlint CLI
+bun x commitlint --edit "$1"
