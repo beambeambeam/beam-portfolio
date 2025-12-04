@@ -43,6 +43,7 @@
     "jsdom": "^26.0.0",
     "typescript": "^5.7.2",
     "vite": "^7.0.2",
-    "web-vitals": "^5.0.3"
+    "web-vitals": "^5.0.3",
+    "wrangler": "^3.0.0"
   }
 }
