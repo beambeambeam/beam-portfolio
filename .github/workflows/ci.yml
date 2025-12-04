@@ -9,24 +9,8 @@ on:
       - main
 
 jobs:
-  pre-check:
+  ci:
     runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
-
-      - name: Install dependencies
-        run: bun install
-
-  check:
-    runs-on: ubuntu-latest
-    needs: pre-check
 
     steps:
       - name: Checkout repository
@@ -45,22 +29,6 @@ jobs:
 
       - name: Type check
         run: bun run check-types
-
-  build:
-    runs-on: ubuntu-latest
-    needs: check
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
-
-      - name: Install dependencies
-        run: bun install
 
       - name: Build
         run: bun run build
