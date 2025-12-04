@@ -24,7 +24,7 @@ jobs:
       - name: Install dependencies
         run: bun install
 
-      - name: Lint and format (Biome / Ultracite)
+      - name: Lint and format
         run: bun run check
 
       - name: Type check
