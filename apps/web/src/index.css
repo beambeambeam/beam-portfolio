@@ -186,3 +186,15 @@
     @apply bg-background text-foreground;
   }
 }
+
+@view-transition {
+  navigation: auto;
+}
+
+/* biome-ignore lint/correctness/noUnknownTypeSelector: View Transition API pseudo-elements are valid */
+::view-transition-old(root),
+/* biome-ignore lint/correctness/noUnknownTypeSelector: View Transition API pseudo-elements are valid */
+  ::view-transition-new(root) {
+  animation-duration: 0.15s;
+  animation-timing-function: ease-in-out;
+}

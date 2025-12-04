@@ -47,6 +47,7 @@ function BlogsPage() {
               key={post._meta.path}
               params={{ id: post._meta.path }}
               to="/blogs/$id"
+              viewTransition
             >
               <Card className="transition hover:cursor-pointer hover:border-accent">
                 <CardHeader>

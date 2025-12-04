@@ -36,13 +36,17 @@ function BlogDetailPage() {
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink>
-                <Link to="/">Home</Link>
+                <Link to="/" viewTransition>
+                  Home
+                </Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbLink>
-                <Link to="/blogs">Blogs</Link>
+                <Link to="/blogs" viewTransition>
+                  Blogs
+                </Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
@@ -71,7 +75,7 @@ function BlogDetailPage() {
             </div>
           </CardContent>
         </Card>
-        <Link to="..">
+        <Link to=".." viewTransition>
           <Button size="icon-lg" variant="outline">
             <ArrowDownLeftIcon />
           </Button>
