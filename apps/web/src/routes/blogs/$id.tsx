@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { allPosts } from "content-collections";
 import { ArrowDownLeftIcon } from "lucide-react";
+import ReactMarkdown from "react-markdown";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -70,8 +71,8 @@ function BlogDetailPage() {
         </header>
         <Card>
           <CardContent>
-            <div className="whitespace-pre-wrap text-muted-foreground text-sm leading-relaxed">
-              {post.content}
+            <div className="prose prose-sm dark:prose-invert max-w-none prose-blockquote:border-l-muted-foreground prose-pre:bg-muted prose-blockquote:text-muted-foreground prose-code:text-foreground prose-headings:text-foreground prose-p:text-muted-foreground prose-strong:text-foreground">
+              <ReactMarkdown>{post.content}</ReactMarkdown>
             </div>
           </CardContent>
         </Card>
