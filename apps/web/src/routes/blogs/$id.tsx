@@ -9,7 +9,8 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
+import { RelativeTimeCard } from "@/components/ui/relative-time-card";
 
 export const Route = createFileRoute("/blogs/$id")({
   component: BlogDetailPage,
@@ -49,31 +50,29 @@ function BlogDetailPage() {
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        <Link to="..">
-          <Button variant="outline">BACK</Button>
-        </Link>
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-2xl tracking-tight">
-              {post.title}
-            </CardTitle>
+        <header className="space-y-2">
+          <h1 className="font-semibold text-3xl tracking-tight">
+            {post.title}
+          </h1>
+          <p className="text-muted-foreground">
             <time
               className="text-muted-foreground text-xs"
               dateTime={post.publishedAt}
             >
-              {new Date(post.publishedAt).toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "short",
-                day: "2-digit",
-              })}
+              <RelativeTimeCard date={new Date(post.publishedAt)} />
             </time>
-          </CardHeader>
+          </p>
+        </header>
+        <Card>
           <CardContent>
             <div className="whitespace-pre-wrap text-muted-foreground text-sm leading-relaxed">
               {post.content}
             </div>
           </CardContent>
         </Card>
+        <Link to="..">
+          <Button variant="outline">BACK</Button>
+        </Link>
       </article>
     </main>
   );
