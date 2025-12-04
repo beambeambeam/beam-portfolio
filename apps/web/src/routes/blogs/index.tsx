@@ -56,16 +56,6 @@ function BlogsPage() {
                       <CardTitle className="text-lg">{post.title}</CardTitle>
                       <CardDescription>{post.description}</CardDescription>
                     </div>
-                    <time
-                      className="shrink-0 text-muted-foreground text-xs"
-                      dateTime={post.publishedAt}
-                    >
-                      {new Date(post.publishedAt).toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "short",
-                        day: "2-digit",
-                      })}
-                    </time>
                   </div>
                 </CardHeader>
               </Card>
