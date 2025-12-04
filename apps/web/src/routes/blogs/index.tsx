@@ -1,0 +1,68 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { allPosts } from "content-collections";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+
+export const Route = createFileRoute("/blogs/")({
+  component: BlogsPage,
+});
+
+function BlogsPage() {
+  return (
+    <main className="container mx-auto max-w-3xl px-4 py-8">
+      <section className="space-y-4">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink>
+                <Link to="/">Home</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>Blogs</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+        <header className="space-y-2">
+          <h1 className="font-semibold text-3xl tracking-tight">Blogs</h1>
+          <p className="text-muted-foreground">Random notes by meh!</p>
+        </header>
+
+        <div className="space-y-3">
+          {allPosts.map((post) => (
+            <Link
+              key={post._meta.path}
+              params={{ id: post._meta.path }}
+              to="/blogs/$id"
+              viewTransition
+            >
+              <Card className="transition hover:cursor-pointer hover:border-accent">
+                <CardHeader>
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="space-y-1">
+                      <CardTitle className="text-lg">{post.title}</CardTitle>
+                      <CardDescription>{post.description}</CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+              </Card>
+            </Link>
+          ))}
+        </div>
+      </section>
+    </main>
+  );
+}

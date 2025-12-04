@@ -58,3 +58,6 @@ dev-dist
 .dev.vars*
 
 .open-next
+
+# Content Collections
+.content-collections

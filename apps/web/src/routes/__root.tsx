@@ -17,7 +17,8 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
       },
       {
         name: "viewport",
-        content: "width=device-width, initial-scale=1",
+        content:
+          "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover",
       },
       {
         title: "Beam Portfolio",
@@ -27,6 +28,19 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
       {
         rel: "stylesheet",
         href: appCss,
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.googleapis.com",
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap",
       },
     ],
   }),
@@ -41,7 +55,7 @@ function RootDocument() {
         <HeadContent />
       </head>
       <body>
-        <div className="grid h-svh grid-rows-[auto_1fr]">
+        <div className="relative flex min-h-screen flex-col font-sans antialiased">
           <Outlet />
         </div>
         <Toaster richColors />
