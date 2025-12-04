@@ -30,11 +30,13 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
+      - name: Build web app
+        run: turbo build -F web
+
       - name: Deploy web app
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          # run wrangler from the web app workspace
+          packageManager: bun
           workingDirectory: apps/web
-          # use the default `wrangler deploy` command, which will pick up wrangler.jsonc
           command: deploy
