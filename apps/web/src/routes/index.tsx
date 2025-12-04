@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { SquareArrowUpRightIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({
@@ -15,12 +16,13 @@ function HomeComponent() {
         <p className="text-muted-foreground">
           I built a lot of shit; Hope it works.
         </p>
+        <Link className="flex" to="/blogs">
+          <Button size="lg" variant="outline">
+            Blogs
+            <SquareArrowUpRightIcon />
+          </Button>
+        </Link>
       </section>
-      <div>
-        <Button variant="link">
-          <Link to="/blogs">Blogs</Link>
-        </Button>
-      </div>
     </main>
   );
 }
