@@ -5,6 +5,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { Toaster } from "@/components/ui/sonner";
+import { TailwindIndicator } from "@/components/ui/tailwind-indicator";
 import appCss from "@/index.css?url";
 
 export type RouterAppContext = object;
@@ -59,6 +60,7 @@ function RootDocument() {
           <Outlet />
         </div>
         <Toaster richColors />
+        <TailwindIndicator />
         <Scripts />
       </body>
     </html>
