@@ -1,27 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { allPosts } from "content-collections";
 import {
   Card,
   CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-
-type Blog = {
-  id: string;
-  title: string;
-  description: string;
-  publishedAt: string;
-};
-
-const blogs: Blog[] = [
-  {
-    id: "lorem-ipsum-1",
-    title: "Lorem Ipsum Dolor Sit Amet",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    publishedAt: "2024-11-12",
-  },
-];
 
 export const Route = createFileRoute("/blogs/")({
   component: BlogsPage,
@@ -37,27 +21,30 @@ function BlogsPage() {
         </header>
 
         <div className="space-y-3">
-          {blogs.map((blog) => (
-            <Card className="transition hover:border-primary" key={blog.id}>
+          {allPosts.map((post) => (
+            <Card
+              className="transition hover:border-primary"
+              key={post._meta.path}
+            >
               <CardHeader>
                 <div className="flex items-center justify-between gap-4">
                   <div className="space-y-1">
                     <CardTitle className="text-lg">
                       <Link
                         className="hover:underline"
-                        params={{ id: blog.id }}
+                        params={{ id: post._meta.path }}
                         to="/blogs/$id"
                       >
-                        {blog.title}
+                        {post.title}
                       </Link>
                     </CardTitle>
-                    <CardDescription>{blog.description}</CardDescription>
+                    <CardDescription>{post.description}</CardDescription>
                   </div>
                   <time
                     className="shrink-0 text-muted-foreground text-xs"
-                    dateTime={blog.publishedAt}
+                    dateTime={post.publishedAt}
                   >
-                    {new Date(blog.publishedAt).toLocaleDateString("en-US", {
+                    {new Date(post.publishedAt).toLocaleDateString("en-US", {
                       year: "numeric",
                       month: "short",
                       day: "2-digit",
