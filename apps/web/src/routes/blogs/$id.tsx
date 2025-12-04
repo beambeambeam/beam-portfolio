@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { allPosts } from "content-collections";
+import { ArrowDownLeftIcon } from "lucide-react";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -71,7 +72,9 @@ function BlogDetailPage() {
           </CardContent>
         </Card>
         <Link to="..">
-          <Button variant="outline">BACK</Button>
+          <Button size="icon-lg" variant="outline">
+            <ArrowDownLeftIcon />
+          </Button>
         </Link>
       </article>
     </main>
