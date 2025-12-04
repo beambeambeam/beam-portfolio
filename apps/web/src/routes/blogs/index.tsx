@@ -22,37 +22,32 @@ function BlogsPage() {
 
         <div className="space-y-3">
           {allPosts.map((post) => (
-            <Card
-              className="transition hover:border-primary"
+            <Link
               key={post._meta.path}
+              params={{ id: post._meta.path }}
+              to="/blogs/$id"
             >
-              <CardHeader>
-                <div className="flex items-center justify-between gap-4">
-                  <div className="space-y-1">
-                    <CardTitle className="text-lg">
-                      <Link
-                        className="hover:underline"
-                        params={{ id: post._meta.path }}
-                        to="/blogs/$id"
-                      >
-                        {post.title}
-                      </Link>
-                    </CardTitle>
-                    <CardDescription>{post.description}</CardDescription>
+              <Card className="transition hover:cursor-pointer hover:border-accent">
+                <CardHeader>
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="space-y-1">
+                      <CardTitle className="text-lg">{post.title}</CardTitle>
+                      <CardDescription>{post.description}</CardDescription>
+                    </div>
+                    <time
+                      className="shrink-0 text-muted-foreground text-xs"
+                      dateTime={post.publishedAt}
+                    >
+                      {new Date(post.publishedAt).toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month: "short",
+                        day: "2-digit",
+                      })}
+                    </time>
                   </div>
-                  <time
-                    className="shrink-0 text-muted-foreground text-xs"
-                    dateTime={post.publishedAt}
-                  >
-                    {new Date(post.publishedAt).toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "short",
-                      day: "2-digit",
-                    })}
-                  </time>
-                </div>
-              </CardHeader>
-            </Card>
+                </CardHeader>
+              </Card>
+            </Link>
           ))}
         </div>
       </section>

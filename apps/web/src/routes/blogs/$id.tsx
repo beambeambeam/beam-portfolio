@@ -1,5 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { allPosts } from "content-collections";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const Route = createFileRoute("/blogs/$id")({
@@ -20,7 +21,10 @@ function BlogDetailPage() {
 
   return (
     <main className="container mx-auto max-w-3xl px-4 py-8">
-      <article className="space-y-4">
+      <article className="grid gap-2">
+        <Link to="..">
+          <Button variant="outline">BACK</Button>
+        </Link>
         <Card>
           <CardHeader>
             <CardTitle className="text-2xl tracking-tight">
