@@ -12,8 +12,7 @@ function HomeComponent() {
           Beam&apos;s Portfolio
         </h1>
         <p className="text-muted-foreground">
-          This is a clean starting point. Replace this section with your actual
-          portfolio content, projects, and links.
+          I built a lot of shit; Hope it works.
         </p>
       </section>
     </main>
