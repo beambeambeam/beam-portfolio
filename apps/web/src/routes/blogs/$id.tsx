@@ -1,3 +1,4 @@
+import { MDXContent } from "@content-collections/mdx/react";
 import { createFileRoute } from "@tanstack/react-router";
 import { allPosts } from "content-collections";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -38,8 +39,8 @@ function BlogDetailPage() {
             </time>
           </CardHeader>
           <CardContent>
-            <div className="whitespace-pre-wrap text-muted-foreground text-sm leading-relaxed">
-              {post.content}
+            <div className="prose prose-sm max-w-none text-muted-foreground text-sm leading-relaxed">
+              <MDXContent code={post.mdx} />
             </div>
           </CardContent>
         </Card>
