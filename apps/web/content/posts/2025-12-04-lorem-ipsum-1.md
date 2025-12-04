@@ -1,7 +1,7 @@
 ---
 title: "Lorem Ipsum Dolor Sit Amet"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-publishedAt: "2024-11-12"
+publishedAt: "2025-12-04 23:50"
 ---
 
 # Lorem Ipsum Dolor Sit Amet
