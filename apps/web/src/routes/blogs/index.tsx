@@ -37,8 +37,8 @@ function BlogsPage() {
           </BreadcrumbList>
         </Breadcrumb>
         <header className="space-y-2">
-          <h1 className="font-semibold text-3xl tracking-tight">Blog</h1>
-          <p className="text-muted-foreground">random notes</p>
+          <h1 className="font-semibold text-3xl tracking-tight">Blogs</h1>
+          <p className="text-muted-foreground">Random notes by meh!</p>
         </header>
 
         <div className="space-y-3">
