@@ -22,5 +22,22 @@
       "!**/.source"
     ]
   },
-  "extends": ["ultracite/core", "ultracite/react"]
+  "extends": ["ultracite/core", "ultracite/react"],
+  "linter": {
+    "rules": {
+      "style": {
+        "noRestrictedImports": {
+          "level": "error",
+          "options": {
+            "patterns": [
+              {
+                "group": ["./*", "../*"],
+                "message": "Relative imports are not allowed. Use the '@/...' alias instead."
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
 }

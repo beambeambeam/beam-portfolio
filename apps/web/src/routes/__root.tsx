@@ -5,7 +5,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { Toaster } from "@/components/ui/sonner";
-import appCss from "../index.css?url";
+import appCss from "@/index.css?url";
 
 export type RouterAppContext = object;
 
