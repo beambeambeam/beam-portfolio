@@ -6,6 +6,8 @@
     "build": "vite build",
     "dev": "vite dev --port=3001",
     "preview": "vite preview",
+    "generate-sitemap": "bun run scripts/generate-sitemap.ts",
+    "predeploy": "bun run generate-sitemap",
     "deploy": "bun run build && wrangler deploy",
     "cf-typegen": "wrangler types"
   },

@@ -22,7 +22,66 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
           "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover",
       },
       {
-        title: "Beam Portfolio",
+        title: "Beam Portfolio - Full-Stack Developer & Software Engineer",
+      },
+      {
+        name: "description",
+        content:
+          "Explore Beam's portfolio showcasing innovative software projects, technical blog posts, and development expertise. Full-stack developer specializing in modern web technologies.",
+      },
+      {
+        name: "keywords",
+        content:
+          "portfolio, software development, web development, full-stack developer, programming, tech blog, software engineer, React, TypeScript",
+      },
+      {
+        name: "author",
+        content: "Beam",
+      },
+      {
+        name: "robots",
+        content: "index, follow",
+      },
+      // Open Graph tags
+      {
+        property: "og:type",
+        content: "website",
+      },
+      {
+        property: "og:title",
+        content: "Beam Portfolio - Full-Stack Developer & Software Engineer",
+      },
+      {
+        property: "og:description",
+        content:
+          "Explore Beam's portfolio showcasing innovative software projects, technical blog posts, and development expertise.",
+      },
+      {
+        property: "og:site_name",
+        content: "Beam Portfolio",
+      },
+      {
+        property: "og:locale",
+        content: "en_US",
+      },
+      // Twitter Card tags
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
+      {
+        name: "twitter:title",
+        content: "Beam Portfolio - Full-Stack Developer & Software Engineer",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Explore Beam's portfolio showcasing innovative software projects, technical blog posts, and development expertise.",
+      },
+      // Theme color for mobile browsers
+      {
+        name: "theme-color",
+        content: "#000000",
       },
     ],
     links: [
@@ -42,6 +101,15 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap",
+      },
+      {
+        rel: "canonical",
+        href: "https://yourwebsite.com",
+      },
+      {
+        rel: "sitemap",
+        type: "application/xml",
+        href: "/sitemap.xml",
       },
     ],
   }),

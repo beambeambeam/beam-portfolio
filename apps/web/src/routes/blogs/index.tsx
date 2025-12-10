@@ -16,6 +16,47 @@ import {
 } from "@/components/ui/card";
 
 export const Route = createFileRoute("/blogs/")({
+  head: () => ({
+    meta: [
+      {
+        title:
+          "Blog - Technical Articles & Development Insights | Beam Portfolio",
+      },
+      {
+        name: "description",
+        content:
+          "Read Beam's technical blog featuring software development insights, programming tutorials, and tech industry perspectives. Stay updated with the latest in web development.",
+      },
+      {
+        property: "og:title",
+        content:
+          "Blog - Technical Articles & Development Insights | Beam Portfolio",
+      },
+      {
+        property: "og:description",
+        content:
+          "Read Beam's technical blog featuring software development insights, programming tutorials, and tech industry perspectives.",
+      },
+      {
+        property: "og:url",
+        content: "https://yourwebsite.com/blogs",
+      },
+      {
+        property: "og:type",
+        content: "website",
+      },
+      {
+        name: "twitter:title",
+        content:
+          "Blog - Technical Articles & Development Insights | Beam Portfolio",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Read Beam's technical blog featuring software development insights and programming tutorials.",
+      },
+    ],
+  }),
   component: BlogsPage,
 });
 
@@ -38,7 +79,9 @@ function BlogsPage() {
         </Breadcrumb>
         <header className="space-y-2">
           <h1 className="font-semibold text-3xl tracking-tight">Blogs</h1>
-          <p className="text-muted-foreground">Random notes by meh!</p>
+          <p className="text-muted-foreground">
+            Technical articles, development insights, and programming tutorials
+          </p>
         </header>
 
         <div className="space-y-3">
